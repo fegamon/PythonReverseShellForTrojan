@@ -5,7 +5,7 @@ The tool consists of two files: listener.py and reverse_shell.py.
 Runs a TCP server in the attacker's machine and goes into listening mode, waiting for the connection from victim's machine.
 ### Usage:
 `python3 listener.py [OPTIONS]`
-### Options:
+### Flags:
 - **-i, --ip:** Ip address to listening
 - **-p, --p:** Port number to listening
 - **-h, --help:** Show list of commands

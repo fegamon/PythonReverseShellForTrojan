@@ -13,11 +13,11 @@ Runs a TCP server in the attacker's machine and goes into listening mode, waitin
 ### Commands:
 Once the victim has connected to our server, we can run the commands from his machine like a normal reverse shell, but also, this tool has 4 own commands:
 - **exit, Exit:** Finishes client-server connection.
-- **down:** Download any file from client's side to our machine. The structure has to be `down` + `[dest_path]` + `[file_name]`. 
+- **down:** Download any file from client's side to our machine. The structure has to be down + [dest_path] + [file_name]. 
 Example:
 `$down /home/user/Documents/ file.txt`
-Where `[dest_path]` is the route where we want to download the file **(don't add a file name here, just the path)**, and `[file_name]` is the name of the file in the victim's machine. The tool will use `[file_name]` to name the downloaded file.
-- **up:** Up any file from our machine to the victim's machine. The structure has to be `up` + `[dest_path]` + `[file_name]`.
+Where [dest_path] is the route where we want to download the file **(don't add a file name here, just the path)**, and [file_name] is the name of the file in the victim's machine. The tool will use [file_name] to name the downloaded file.
+- **up:** Up any file from our machine to the victim's machine. The structure has to be up + [dest_path] + [file_name].
 Example:
 `$up /home/victim_folder/Desktop/folder/ /home/our_user/file.txt`
 
